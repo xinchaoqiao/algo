@@ -26,7 +26,8 @@ void MaxLength(char *str) {
 
 int main() {
     char str[100];
-    fgets(str, sizeof(str), stdin); // 读取字符串
+    //fgets(str, sizeof(str), stdin); // 读取字符串
+    gets(str);
     MaxLength(str);
     return 0;
 }
