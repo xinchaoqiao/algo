@@ -1,11 +1,22 @@
 #include <iostream>
 using namespace std;
-typedef long long ll;
+const int N = 10010;
+int arr[N];
+int n;
 int main() {
-    //c++数据自然溢出 最大的溢出成为最小的 可以用来判断类型
-    ll x = 2147483648;
-    int y = x;
-    printf("%lld\n", x);
-    printf("%d", y);
+    scanf("%d", &n);
+    for (int i = 0;i < n;i++) scanf("%d", &arr[i]);
+    int count = 1, max = 1;
+    for (int i = 0; i <= n - 1;i++) {
+        if (arr[i] + 1 == arr[i + 1]) {
+            if (i == n - 1)count++;
+            count++;
+        }
+        else {
+            if (max < count) max = count;
+            count = 1;
+        }
+    }
+    printf("%d", max);
     return 0;
 }
