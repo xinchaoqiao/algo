@@ -1,14 +1,25 @@
 #include <iostream>
 using namespace std;
-typedef long long ll;
-int main(void) {
-    ll x1, x2, y1, y2;
-    int i1, i2, i3, i4;
-    scanf("%lld %lld %lld %lld", &x1, &x2, &y1, &y2);
-    i1 = x1, i2 = x2, i3 = y1, i4 = y2;
-    if (x1 * y1 != i1 * i3 || x1 * y2 != i1 * i4 || x2 * y1 != i2 * i3 || x2 * y2 != i2 * i4) {
-        printf("long long int");
+double total;
+int main(){
+    scanf("%lf",&total);
+    if(total <= 150){
+        double price = 0.4463;
+        printf("%.1lf",price * total);
     }
-    else printf("int");
+    else if(total >150 && total <= 400){
+        double price1 = 0.4463;
+        double price2 = 0.4663;
+        int extra = total - 150;
+        double cost = price1 * 150 + extra * price2;
+        printf("%.1lf",cost);
+    }
+    else{
+        double price1 = 0.4463, price2 = 0.4663,price3 = 0.5663;
+        int extra1 = 400 - 150;
+        int extra2 = total - 400;
+        double cost = price1 * 150 + extra1 * price2 + extra2 * price3;
+        printf("%.1lf",cost);
+    }
     return 0;
 }
