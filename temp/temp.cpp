@@ -1,11 +1,14 @@
 #include <iostream>
 #include <string>
-
+#include <tr1/unordered_map>
 using namespace std;
+using namespace tr1;
+
 
 std::string solution(const std::string& s) {
     // write code here
     int i = 0;
+    
     while (s[i] == '0') {
         if (s[i + 1] == '.')
             break;
