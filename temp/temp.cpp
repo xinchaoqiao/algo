@@ -39,5 +39,34 @@ std::string solution(const std::string& s) {
 
 int main() {
     cout << (solution("1294512.12412") == "1,294,512.12412") << endl;
+const double de = 0.98;
+double s, x;
+int main() {
+    scanf("%lf %lf", &s, &x);
+    double fs = 7;
+    double disfish = 0;
+    bool flag = false;
+    while (true) {
+        disfish += fs;
+        if (disfish >= s + x && !flag) {
+            cout << 'n' << endl;
+            return 0;
+        }
+        //判断这一秒结束是否在范围内
+        if (disfish >= s - x && disfish <= s + x) {
+            flag = true;
+        }
+
+        //如果在范围内 判断下一秒能否游出去 不能返回y
+        if (disfish+fs*de >= s - x && disfish+fs*de <= s + x && flag) {
+            cout << 'y' << endl;
+            return 0;
+        } // 能游出去 返回n
+        else {
+            cout << 'n' << endl;
+            return 0;
+        }
+        fs *= de;
+    }
     return 0;
 }
