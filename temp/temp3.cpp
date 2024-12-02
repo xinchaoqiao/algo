@@ -18,5 +18,5 @@ int main(void) {
 
     printf("%d %d", c2 / __gcd(c1, c2), c1 / __gcd(c1, c2));
 
-        return 0;
+    return 0;
 }
