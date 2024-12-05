@@ -1,14 +1,39 @@
-#include <bits/stdc++.h>
+#include <iostream>
+
+#include <string>
+
 using namespace std;
-int main(void) {
-    string s;
-    cin >> s;
-    cout << stoi(s) ;
-    return 0;
-const int N = 210;
-char rel[N * N], str[N];
+std::string solution(const std::string &s) {
+  // write code here
+  int i = 0;
+  while (s[i] == '0' && i < s.size())
+    i++;
+  string before, after;
+  auto pos = s.find('.');
+  if (pos != string::npos) {
+    before = s.substr(i, pos-i);
+    after = s.substr(pos);
+  } else {
+    before = s.substr(i);
+  }
+
+  string rel;
+  int count = 0;
+  for (int j = before.size() - 1; j >= 0; j--) {
+    rel = before[j] + rel;
+    count++;
+    if (count % 3 == 0 && j != 0) {
+      rel = ',' + rel;
+    }
+  }
+  if (after.empty()) {
+    return rel;
+  }
+  return rel + after;
+}
 
 int main() {
-	cout << 8 * 250 << endl;
-	return 0;
+
+  std::cout << (solution("0000123456789.99")) << std::endl;
+
 }

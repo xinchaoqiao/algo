@@ -4,6 +4,7 @@ const int N = 10;
 int n;
 int path[N];
 bool st[N];
+// 深搜 暴搜
 void dfs(int u) {
     if (u == n) {
         for (int i = 0;i < n;i++) printf("%d ", path[i]);

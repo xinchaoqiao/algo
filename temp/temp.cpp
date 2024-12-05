@@ -1,15 +1,31 @@
 #include <iostream>
+#include <vector>
 using namespace std;
-int n, m;
-int main(void) {
-    cin >> n >> m;
-    int s1 = 0, s2 = 0;
-    //长方形
-    s2 = ((1 + n) * (1 + m) * m * n) / 4;
-    //正方形
-    for (;m > 0 && n > 0;m--, n--) {
-        s1 += m * n;
+vector<int> num;
+const int N = 11;
+bool st[N];
+int path[N];
+int n;
+void dfs(int u) {
+    if (u == n) {
+        for (int i = 0;i < n;i++) {
+            cout << path[i] << " ";
+        }
+        cout << endl;
+        return;
     }
-    cout << s1 << " " << s2 - s1 << endl;
+    for (int i = 1;i <= n;i++) {
+        if (!st[i]) {
+            path[u] = i;
+            st[i] = true;
+            dfs(u + 1);
+            st[i] = false;
+        }
+    }
+}
+int main() {
+
+    cin >> n;
+    dfs(0);
     return 0;
 }
