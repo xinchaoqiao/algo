@@ -1,3 +1,16 @@
+# sort排序普通函数
+
+```c++
+    sort(h, h + n - m);
+```
+
+sort(__first,__end); 原理:利用指针
+
+给一个区间 左闭右开
+
+从0开始排序 升序
+
+```cpp
 #include <iostream>
 #include <algorithm>
 using namespace std;
@@ -10,3 +23,4 @@ int main() {
     }
     return 0;
 }
+```
