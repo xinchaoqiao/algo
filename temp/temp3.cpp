@@ -1,22 +1,20 @@
 #include <iostream>
-#include <algorithm>
 using namespace std;
-int a1, a2, b1, b2;
-char spc;
+typedef long long ll;
+/*
+    快速计算 (a ^ k) % p 
+
+*/
+ll ksm(ll a, ll k, ll p) {
+    ll res = 1;
+    while (k) {
+        if (k & 1) res *= a % p;
+        a *= a % p;
+        k >>= 1;
+    }
+    return res;
+}
 int main(void) {
-    scanf("%d", &a1);
-    spc = getchar();
-    scanf("%d", &a2);
-
-
-    scanf("%d", &b1);
-    spc = getchar();
-    scanf("%d", &b2);
-
-    int c1 = a1 * b1;
-    int c2 = a2 * b2;
-
-    printf("%d %d", c2 / __gcd(c1, c2), c1 / __gcd(c1, c2));
-
+    cout << ksm(3, 2, 5) << endl;
     return 0;
 }

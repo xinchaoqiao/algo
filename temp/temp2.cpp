@@ -1,12 +1,10 @@
-#include <iostream>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
-int main() {
-    int a[5];
-    for (int i = 0;i < 5;i++) cin >> a[i];
-    sort(a, a + 5);
-    for (int i = 0;i < 5;i++) {
-        cout << a[i] << endl;
-    }
+typedef long long ll;
+ll x, n;
+int main() {    
+    int a = 3;
+    cout <<( a & 1 )<< endl;
+
     return 0;
 }
