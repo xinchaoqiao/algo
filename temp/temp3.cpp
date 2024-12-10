@@ -1,20 +1,15 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-typedef long long ll;
-/*
-    快速计算 (a ^ k) % p 
-
-*/
-ll ksm(ll a, ll k, ll p) {
-    ll res = 1;
-    while (k) {
-        if (k & 1) res *= a % p;
-        a *= a % p;
-        k >>= 1;
+int main() {
+    queue<string> q;
+    string start = "1213";
+    string end = "121";
+    q.push(start);
+    q.push(end);
+    cout << q.size() << endl;
+    while (q.size()) {
+        cout << q.front() << endl;
+        q.pop();
     }
-    return res;
-}
-int main(void) {
-    cout << ksm(3, 2, 5) << endl;
     return 0;
 }
