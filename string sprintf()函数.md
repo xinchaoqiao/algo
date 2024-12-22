@@ -1,3 +1,6 @@
+# 字符串格式化拼接
+
+```c++
 /*
     sprintf(char*,const char*...)可变参数 不能使用string 需要使用c风格字符串 用c_str()转换
     char 类型可以自动转换为 string 类型
@@ -13,3 +16,9 @@ int main() {
     cout << rel << endl;
     return 0;
 }
+```
+
+/*
+sprintf(char*,const char*...)可变参数 不能使用string 需要使用c风格字符串 用c_str()转换
+char 类型可以自动转换为 string 类型
+*/
