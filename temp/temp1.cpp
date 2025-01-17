@@ -8,5 +8,4 @@ int main(void) {
         cout << endl;
     }
     return 0;
-    cout << "hello world" << endl;
 }
