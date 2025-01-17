@@ -45,3 +45,7 @@ int main(void) {
       return __m;
     }
 ```
+
+## gcd()函数 Mac 版本
+
+Mac中 使用的是numeric库里的gcd函数

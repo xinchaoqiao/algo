@@ -6,7 +6,7 @@
 
 如果截取某一段的字符串
 
-`substr(i,pos-i)`eg: 111111.11 i = 2 pos = 5 则 答案：1111.
+`substr(i,pos)`eg: 111111.11 i = 2 pos = 5 则 答案：1111.
 
 string find（） 函数 如果没找到  将会=string::npos
 
