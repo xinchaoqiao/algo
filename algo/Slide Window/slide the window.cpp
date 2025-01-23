@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 const int N = 1e6 + 10;
 int n, k, hh = 0, tt = -1;
