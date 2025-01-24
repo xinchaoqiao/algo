@@ -13,7 +13,7 @@ void add(int a, int b) {
     h[a] = idx++;
 }
 
-void def(int u) {
+void dfs(int u) {
     st[u] = true;//this node is searched
     for (int i = 0;i != -1;i = ne[i]) {
         int value = e[i];
