@@ -7,7 +7,6 @@
 #include <deque>
 using namespace std;
 int solution(int n, int k, std::vector<int> data) {
-    // Edit your code here
     deque<pair<int, int>> mins;// 双端队列 插入 index 和 value
     int rel = 0;
     for(int i = 0;i < n;i++){
