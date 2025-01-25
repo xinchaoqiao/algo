@@ -25,7 +25,7 @@ void dfs(int x, int y, int step) {
     for (int i = 0;i < 4;i++) {
         int tx = x + dx[i];
         int ty = y + dy[i];
-        if (maze_map[tx][ty] == 1 && visited[tx][ty] == 0) {
+        if (tx >= 0 && tx < n && ty >=0 && ty < m && maze_map[tx][ty] == 1 && visited[tx][ty] == 0) {
             visited[tx][ty] = 1;
             dfs(tx, ty, step + 1);// 比如向右试探，那么在这个基础上继续试探 步数需要+1；
             visited[tx][ty] = 0;

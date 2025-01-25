@@ -29,6 +29,7 @@ queue<point> q;
 int bfs() {
     point start(startx, starty, 0);
     q.push(start);
+    v[startx][starty] = 1;
     int flag = 0;
     while (!q.empty()) {
         int x = q.front().x;
@@ -43,9 +44,10 @@ int bfs() {
         for (int i = 0;i < 4;i++) {
             int tx = x + dx[i];
             int ty = y + dy[i];
-            if (tx >= 0 && tx <= n && ty >= 0 && ty <= m && v[tx][ty] == 0 && maze_map[tx][ty] == 0) {
+            if (tx >= 0 && tx < n && ty >= 0 && ty < m && v[tx][ty] == 0 && maze_map[tx][ty] == 0) {
                 point tm(tx, ty, q.front().step + 1);
                 q.push(tm);
+                v[tx][ty] = 1;
             }
         }
         q.pop();
