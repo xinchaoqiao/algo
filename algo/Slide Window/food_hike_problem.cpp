@@ -10,14 +10,14 @@ int solution(int n, int k, std::vector<int> data) {
     deque<pair<int, int>> mins;// 双端队列 插入 index 和 value
     int rel = 0;
     for(int i = 0;i < n;i++){
-        // 队列不为空 且 队尾元素大于当前元素时 移除队尾元素
+        // 是否单调
         while(!mins.empty() && mins.back().second > data[i]){
             mins.pop_back();
         }
-        //添加当前元素的值和索引
+        //添加元素
         mins.emplace_back(i,data[i]);//比push_back()快;
 
-        //检查队头索引范围
+        //是否在窗口内
         while(mins.front().first <= i - k ){
             mins.pop_front();
         }
