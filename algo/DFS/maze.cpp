@@ -19,6 +19,7 @@ void dfs(int x, int y, int step) {
     }
     // 优化 避免不必要的递归
     if (step > min_step) return;
+
     int dx[4] = { 0,1,0,-1 };
     int dy[4] = { 1,0,-1,0 };// 试探右下左上四个方向
     //四个方向 循环四次 每个方向都进行试探
@@ -34,6 +35,8 @@ void dfs(int x, int y, int step) {
 
     return;
 }
+
+
 int main() {
     std::ios::sync_with_stdio(false), std::cin.tie(0), std::cout.tie(0);
     cin >> m >> n;
