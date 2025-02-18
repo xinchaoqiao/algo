@@ -1,48 +1,32 @@
+
 #include <iostream>
-#include <vector>
 #include <string>
-#include <algorithm>
+#include <unordered_map>
 using namespace std;
 
-
-long solution(const std::string& s, const std::vector<int>& a, int m, int k) {
-    // PLEASE DO NOT MODIFY THE FUNCTION SIGNATURE
-    // write code here
-    vector<pair<char, int>> v;
-    for (int i = 0;i < a.size();i++) {
-        v.push_back({ s[i],a[i] });
+std::string solution(const std::string& str1) {
+    // Edit your code here
+    unordered_map<char,int> hash;
+    string rel = "";
+    for(int i = 0;i < str1.length();i++){
+        if(hash[str1[i]] == 0){
+            rel = rel + str1[i];
+            hash[str1[i]]++;
+        }
+        
     }
-    sort(v.begin(), v.end(), [](pair<char, int> a, pair<char, int> b) {
-        return a.second < b.second;
-        });
-    int sum = 0, cnt = 0, total = 0;
-    for (int i = 0;i < a.size();i++) {
-        if (total == k) {
-            return sum;
-        }
-
-
-        if (v[i].first == '0') {
-            sum += v[i].second;
-            total++;
-        }
-        else {
-            if (cnt == m) {
-                continue;
-            }
-            cnt++;
-            total++;
-            sum += v[i].second;
-        }
-
-    }
-    if (total != k)
-        return -1;
+    cout << rel << endl;
+    return rel;
 }
 
 int main() {
-    std::cout << (solution("001", { 10, 20, 30 }, 1, 2) == 30) << std::endl;
-    std::cout << (solution("111", { 10, 20, 30 }, 1, 2) == -1) << std::endl;
-    std::cout << (solution("0101", { 5, 15, 10, 20 }, 2, 3) == 30) << std::endl;
+    // Add your test cases here
+    
+    std::cout << (solution("abbabbbabb") == "ab") << std::endl;
+    std::cout << (solution("abbbabbbb") == "ab") << std::endl;
+    std::cout << (solution("jiabanbananananiabanbananananbananananiabanbananananbananananbananananbanananan") == "jiaban") << std::endl;
+    std::cout << (solution("selectecttectelectecttectcttectselectecttectelectecttectcttectectelectecttectcttectectcttectectcttectectcttect") == "select") << std::endl;
+    std::cout << (solution("discussssscussssiscussssscussssdiscussssscussssiscussssscussssiscussssscussss") == "discus") << std::endl;
+    cout << "hello " << endl;
     return 0;
 }
