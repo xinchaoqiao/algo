@@ -1,7 +1,9 @@
 #include <bits/stdc++.h>
+#include <vector>
 using namespace std;
 int main() {
-    int a = 20, b = 11;
-    __gcd(a, b);
+    vector<int> v;
+    v.push_back(1);
+    cout << v.back() << endl;
     return 0;
 }
